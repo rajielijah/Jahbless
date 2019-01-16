@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<main>
+	{% if user.is_authenticated %}
+	<p>{{ user.get_username }}, You have Logged in
+		{% else %}
+<h2>Sign Up</h2>
+<form method="post">
+	{% csrf_token %}
+	
+	{{ form.as_p }}
+
+<input type="submit" value =" Sign Up ">
+</form>
+{% endif %}
+</main>
+
+
+<style type="text/css">
+	main{
+		float: left;
+		width: 960px;
+		height: 450px;
+		margin:10px;
+	}
+</style>
+{% endblock %}

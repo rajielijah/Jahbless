@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+<main>
+	<h3>Contact Us</h3>
+<p>If you have any important thing you want to discuss with us about any recipes Kindly Contact rajielijah@gmail.com
+
+</p><br>
+<br>
+<h4>Kindly Give us Feedback here</h4>
+<form action ='.' method="post">
+	<table>
+		{{ form.as_table }}
+	</table>
+	<input type="submit" value="Submit">
+</main>
+
+<style type="text/css">
+	main {
+		float: left;
+		width:960px;
+		height:450px;
+		margin:10px;
+	}
+h3 {
+	text-align: center;
+	color: gray;
+}
+p{
+	position: relative;
+	left: 60px;
+	
+}
+table {
+	text-align: center;
+}
+</style>
+
+	{% endblock %}

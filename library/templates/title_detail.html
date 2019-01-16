@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<main>
+	<h2>Details of {{ title_list.title }}</h2>
+	<h4>Title - {{ title_list.title }}</h2>
+	<h4>Author - {{ title_list.author }}</h4>
+	<h4>ISBN - {{ title_list.isbn }}</h4>
+	<h4>Year Of Production - {{ title_list.year_of_prod }}</h4>
+	<h4>ID - {{ title_list.id }}</h4>
+
+
+</main>
+<style type="text/css">
+	main {
+		float: left;
+		margin: 10px;
+		width:960px;
+		height: 450px;
+	}
+</style>

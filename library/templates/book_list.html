@@ -1,0 +1,22 @@
++{% extends 'base.html' %}
+{% block content %}
+<main>
+	<h3>Here are the list of Books we have in our Library</h3>
+	
+		{% for book in book_list %}
+		<ul>
+		<li><a href="/library/book/{{ book.id }}/">{{ book.title }}</a></li>
+	
+	</ul>
+	{% endfor %}
+</main>
+
+<style type="text/css"> 
+main {
+	float: left;
+	width: 960px;
+	height: 450px;
+	margin: 10px;
+}
+</style>
+{% endblock %}

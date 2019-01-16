@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<main>
+	<h3>Lists of popular authors of our books</h3>
+	{% for author in author_list %}
+	<ul>
+		<li><a href="{% url 'author-detail' author.pk %}">{{ author.first_name }} {{ author.last_name }}</a>
+
+		</li>
+		
+	</ul>
+	{% endfor %}
+</main>
+<style type="text/css">
+	main {
+		float:left;
+		width: 960px;
+		height: 400px;
+		overflow: auto;
+		margin: 10px;
+	}
+	
+	
+</style>
+{% endblock %}

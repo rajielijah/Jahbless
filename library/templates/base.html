@@ -1,0 +1,204 @@
+{% load staticfiles %}
+<link rel = "stylesheet" href = "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel = "stylesheet" type = "text/css" href = "{% static 'library/style.css' %}" />
+<link href='https://fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+{% block title %} <title> Jahbless Library  </title>
+</head>
+
+<body>
+	<header>
+	<div class="container">
+		<div class="item-a">
+			<div class="item-0">
+				<div class="not">
+			<h1 class="header1"><a href="{% url 'index' %}" class="header1">Jahbless Library</h1></a>
+		</div>
+			<form method="GET" action="/search/" class="form-a">
+				<label for="q">Search: </label>
+				<input  name='q' value = '{{ query|escape }}' type="text", placeholder="Search">
+				<input type="submit" value="Search">
+				</form>
+
+			
+
+</div>
+
+<div class="item-1">
+	<ul class='line1'>
+		<li class="line"><a href="{% url 'index' %}" class="link"><button class="line2">Home</a></li></button>
+		<li class="line"><a href="{% url 'about_us' %}" class="link"><button class="line2">About</a></li></button>
+		<li class="line"><a href="{% url 'title' %}" class="link"><button class="line2">Books</a></li></button>
+		<li class="line"><a href="{% url 'author' %}" class="link"><button class="line2">Authors</a></li></button>
+		<li class="line"><a href="{% url 'contact_us' %}" class="link"><button class="line2">Contact</a></li></button>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="item-2">
+	<h3 class='menu1'>Jahbless Online E-book Library</h3>
+	<small class="menu2">No.1 online e-library website</small><br>
+	<br>
+	<br>
+	{% if user.is_authenticated %}
+	<h4>User:{{ user.get_username }}</h4>
+	<a href="{% url 'logout' %}?next={{request.path}}">Logout</a>
+	{% else %}
+	<button class='but'><a href="{% url 'login' %}?next={{request.path}}">Login</button></a> /<button class='but'> <a href="{% url 'signup' %}">Sign up</button></a>
+{% endif %}
+</div>
+
+
+</div>
+
+
+</header>
+<div class="main">
+{% endblock %}
+{% block content %}
+
+{% endblock %}
+
+
+{% block sidebar %}
+<aside>
+	<h3 class="aside1">Popular Books</h3>
+	
+	<ul >
+		<li class='line3'>Django</li><br>
+		<li class='line3'>Java</li><br>
+		<li class='line3'>CSS3</li><br>
+		<li class='line3'>Python</li><br>
+		<li class='line3'>PHP6</li>
+</ul>
+
+	<h4 class="aside2">Popular Authors</h4>
+	<ul>
+		<li  class='line3'>Tosin Akinnagbe</li><br>
+		<li  class='line3'>Bamidele Akinyemi</li><br>
+		<li  class='line3'>Dan Patter</li><br>
+		<li  class='line3'>Seun Raji</li><br>
+		<li  class='line3'>Jahbless Elijah</li><br>
+	</ul>
+
+
+</aside>
+</div>
+{% endblock %}
+
+<footer>
+	&copy; Jahbless Library 2018
+
+</footer>
+
+<style type="text/css">
+body {
+	font-size: 90%;
+	font-family: Georgia, times, serif;
+	background-color: #f9f8f6;
+	margin: 0px auto;
+	background-position: center;
+}
+h1 {
+	text-transform: uppercase;
+	padding-bottom: 0px auto;
+}
+footer {
+font-size: 80%;
+padding: 7px 0px 0px 20px;
+width: 960px;
+text-align:center;
+
+}
+.but {
+	border-radius: 10px;
+	background-color: lightblue;
+	
+	text-transform: uppercase;
+}
+a {
+	text-decoration: none;
+}
+figcaption {
+	border-bottom: 50px;
+	float:right;
+	padding:20px;
+	padding-bottom:auto;
+}
+.menu1 {
+
+}
+.aside1 {
+	color: darkgray;
+}
+.link{
+	text-decoration:none;
+	text-transform: uppercase;
+}
+.link:hover {
+	color: pink;
+}
+	.item-0 {
+		text-align: center;
+		border:1px solid white;
+		margin:1px;
+		padding:1px;
+
+		
+			}
+	.item-2 {
+		text-align: center;
+		background-image: url('file:///C:/Users/Jahbless/Desktop/pics/pexels-photo-733853.jpeg');
+		background-repeat: no-repeat;
+		padding-bottom: 80px;
+		padding-top: 20px;
+	}
+	.header1{
+		color: white;
+		
+	}
+
+.line{
+	display: inline;
+	padding:auto;
+	border:25px;
+	text-align: center;
+	margin-left: 10px;
+	border-radius: 30px;
+}
+.container {
+	background-color: lightgrey;
+}
+.line1 {
+	display: inline-grid;
+	grid-template-columns: repeat(5, 150px);
+	text-align:center;
+	padding-left: 300px;
+	text-decoration-style: none;
+}
+.line2 {
+	border-radius:45px;
+	margin:20px;
+	background-color: white;
+}
+.line3{
+	color: gray;
+}
+.aside2 {
+	color: gray;
+}
+
+</style>
+
+
+
+
+</body>
+
+
+
+</html>

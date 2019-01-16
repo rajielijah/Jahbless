@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main>	
+	<h3>Library News</h3>
+	<figure class="pics">
+		<figcaption>
+			 <h2 class="main1">The Perfect Score</h2>
+	<h5 class="main2">Posted on October 29, 2018</h5>
+	<p>The perfect score is told through the voices of five students in 6th grade. Gavin loves football <a href="{% url 'ps' %}">Read More</a></p>
+
+		</figcaption>
+		
+	</figure>
+<figure class="pic">
+	
+	<figcaption>
+		
+<h2 class="main1">Libraries For Everyone</h2>
+	<h5 class="main2">Posted on October 27, 2018</h5>
+<p>I'm not usually the one to do a theme, but i'm giving it a try this year with a global theme On <a href="{% url 'lfe' %}">Read More</a></p>
+	</figcaption>
+
+</figure>
+
+
+
+
+</main>
+
+
+
+<style type="text/css">
+.main1{
+	color: gray;
+}
+	.main2 {
+		color: pink;
+	}
+	main {
+	float:left;
+	overflow: auto;
+	width: 960px;
+	margin:20px;
+}
+figcaption {
+	position: relative;
+	border-bottom: 50px;
+	float:right;
+	padding:20px;
+	padding-bottom:auto;
+}
+
+</style>
+
+
+{% endblock %}

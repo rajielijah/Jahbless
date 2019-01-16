@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+<main>
+	{% if user.is_authenticated %}
+<h3>Here the details about {{ author_list.last_name }}</h3>
+<img src='{{ MEDIA_URL }}{{ author_list.pcs }}'>
+<h4>Full Name - {{ author_list.first_name }} {{ author_list.last_name }}</h4>
+
+<h4>Date Of Birth - {{ author_list.date_of_birth }}</h4>
+{% else %}
+<p>You must Login to access this paage</p>
+<a href="{% url 'login' %}?next={{request.path}}">Login Now</a>
+{% endif %}
+</main>
+<style type="text/css">
+	main {
+		float: left;
+		overflow: auto;
+		width: 960px;
+		margin:10px;
+		height: 450px;
+		text-align: center;
+	}
+</style>
+
+
+{% endblock %}

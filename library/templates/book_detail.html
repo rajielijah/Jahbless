@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<main>
+	<h3>Details of {{ book_list.title }}</h3>
+
+		<h3>Title -{{ book_list.title }}</h3>
+		<h3>Authoe - {{ book_list.author }}</h3>
+		<h3>Genre - {{ book_list.genre }}</h3>
+		<h3> ISBN - {{ book_list.isbn }}</h3>
+		<h3> Year Of Prod - {{ book_list.year_of_prod }}</h3>
+		
+</main>
+<style type="text/css">
+	main {
+		float: left;
+		width:960px;
+		margin: 10px;
+		height: 450px;
+	}
+</style>
+
+{% endblock %}

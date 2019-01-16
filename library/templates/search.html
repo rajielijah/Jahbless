@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<main>
+
+	{% if query %}
+<h2>Results for "{{ query|escape }}":</h2>
+{% if result %}
+<ul>
+{% for book in result %}
+<li>{{ book|escape }}</l1>
+{% endfor %}
+</ul>
+{% else %}
+<p>No books found</p>
+{% endif %}
+{% endif %}
+
+</main>
+{% endblock %}
